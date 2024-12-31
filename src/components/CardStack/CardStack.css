@@ -1,0 +1,135 @@
+/* src/Projects.css */
+
+@media screen and (min-width: 600px) {
+  .projects-container {
+    display: none;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-family: Keyan-Coffee;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+  background-color: transparent;
+  position: absolute;
+}
+
+.des {
+  padding-top: 2rem;
+  font-size: 0.8rem;
+  background-color: transparent;
+}
+
+.name {
+  padding-top: 1rem;
+  font-size: 2rem;
+  background-color: transparent;
+}
+
+.desc-1 {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  background-color: transparent;
+}
+
+.desc-2 {
+  background-color: transparent;
+}
+
+.projects-container {
+  position: relative;
+  height: 600vh; /* to allow scrolling */
+  width: 100%;
+  overflow-y: none;
+}
+
+.project-card {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  background-color: transparent;
+  padding: 20px;
+  margin: 0;
+  width: 100%;
+  box-shadow: 0 2px 3px rgba(222, 216, 216, 0.1);
+  z-index: 1;
+}
+
+.project-card.show {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.project-card.fade-out {
+  opacity: 1;
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    filter: brightness(1);
+
+    scale: (1);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(0.5); /* Adjust this to the level you want */
+
+    scale: 0.96;
+  }
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  margin-top: 7rem;
+  display: flex;
+  align-self: center;
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+  .projects-container {
+    height: 600vh;
+  }
+
+  .project-card video {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+  }
+}
+
+/* src/Projects.css */
+
+/* Define dynamic background colors for each project card */
+.bg-1 {
+  background-color: rgba(245, 245, 246, 255); /* Light Pink */
+}
+
+.bg-2 {
+  background-color: rgba(245, 245, 246, 255); /* Light Blue */
+}
+
+.bg-3 {
+  background-color: rgba(245, 245, 246, 255); /* Light Green */
+}
+
+.bg-4 {
+  background-color: rgba(245, 245, 246, 255); /* Yellow */
+}
+
+.bg-5 {
+  background-color: rgba(245, 245, 246, 255); /* Light Red */
+}

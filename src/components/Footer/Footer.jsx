@@ -50,9 +50,9 @@ const Footer = () => {
       <section className="conclusion" ref={triggerRef}></section>
       <footer className="footer">
         <section className="footer-container" ref={footerRef}>
-          <div className="footer-logo">RAGHU</div>
+          <div className="footer-logo">WORKSHOP</div>
           <nav className="footer-row">
-            <ul className="footer-nav-menu">
+            <ul>
               <a href="#about">About</a>
               <a href="#daily-events">Daily Events</a>
               <a href="#workshops">Workshops</a>
@@ -75,7 +75,7 @@ const Footer = () => {
             </div>
           </div>
           <p className="copyrights">
-            &copy; 2025 RAGHU. All rights reserved.
+            &copy; 2025 WORKSHOP. All rights reserved.
           </p>
         </section>
       </footer>

@@ -4,6 +4,7 @@ import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Add scroll event listener
   useEffect(() => {
@@ -21,38 +22,51 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Toggle menu state
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
-      <div className="header-logo">
-        <HashLink smooth to="#">
-          RAGHU
-        </HashLink>
-      </div>
-      <nav className="navbar">
-        <ul>
-          <li>
-            <HashLink smooth to="#">
-              Home
-            </HashLink>
-          </li>
-          <li>
-            <HashLink smooth to="/#about">
-              About
-            </HashLink>
-          </li>
-          <li>
-            <HashLink smooth to="/#services">
-              Services
-            </HashLink>
-          </li>
-          <li>
-            <HashLink smooth to="/#contact">
-              Contact Us
-            </HashLink>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <>
+      <div className={`overlay ${isMenuOpen ? "visible" : ""}`} onClick={toggleMenu}></div>
+      <header className={`header ${isScrolled ? "scrolled" : ""}`}>
+        <div className="header-logo">
+          <HashLink smooth to="#" onClick={() => setIsMenuOpen(false)}>
+            WORKSHOP
+          </HashLink>
+        </div>
+        <div className={`hamburger ${isMenuOpen ? "open" : ""}`} onClick={toggleMenu}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <nav className={`navbar ${isMenuOpen ? "mobile-open" : ""}`}>
+          <ul>
+            <li>
+              <HashLink smooth to="#" onClick={() => setIsMenuOpen(false)}>
+                Home
+              </HashLink>
+            </li>
+            <li>
+              <HashLink smooth to="/#about" onClick={() => setIsMenuOpen(false)}>
+                About
+              </HashLink>
+            </li>
+            <li>
+              <HashLink smooth to="/#services" onClick={() => setIsMenuOpen(false)}>
+                Services
+              </HashLink>
+            </li>
+            <li>
+              <HashLink smooth to="/#contact" onClick={() => setIsMenuOpen(false)}>
+                Contact Us
+              </HashLink>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </>
   );
 };
 

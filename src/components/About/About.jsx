@@ -29,7 +29,7 @@ const About = () => {
   const cardData = [
     {
       id: 1,
-      title: "Brazilian Jiu-Jitsu",
+      title: "BJJ",
       img: card1,
       gradient: card1Gradient,
       description:
@@ -159,7 +159,7 @@ const About = () => {
               onMouseEnter={() => setHoveredImage(card.id)}
               onMouseLeave={() => setHoveredImage(null)}
             >
-              <h2>{card.title}</h2>
+              <h2 className="card-title" >{card.title}</h2>
               <img
                 src={hoveredImage === card.id ? card.gradient : card.img}
                 alt={card.title}

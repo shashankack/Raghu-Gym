@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./About.css";
 import gsap from "gsap";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import card1 from "../../assets/BJJ.webp";
 import card2 from "../../assets/BOXING.webp";
@@ -23,6 +21,11 @@ import aboutImg1 from "../../assets/about-img-one.jpg";
 
 const About = () => {
   const [hoveredImage, setHoveredImage] = useState(null);
+  const firstTextRef = useRef(null);
+  const secondTextRef = useRef(null);
+  const sliderRef = useRef(null);
+  let xPercent = 0;
+  let direction = -1;
   const cardData = [
     {
       id: 1,
@@ -74,24 +77,35 @@ const About = () => {
     },
   ];
 
-  const movementRef = useRef(null);
-  const animationRef = useRef(null);
-
   useEffect(() => {
-    const movementElement = movementRef.current;
+    gsap.registerPlugin(ScrollTrigger);
 
-    // Duplicate content for seamless scrolling
-    const stripContent = movementElement.innerHTML;
-    movementElement.innerHTML += stripContent;
-
-    // GSAP Infinite Animation
-    gsap.to(movementElement, {
-      x: "-50%", // Move the strip left by 50%
-      ease: "none", // Maintain a constant speed
-      duration: 70, // Adjust duration for slower movement
-      repeat: -1, // Infinite looping
+    // Create a seamless scrolling effect with ScrollTrigger
+    gsap.to(sliderRef.current, {
+      scrollTrigger: {
+        trigger: document.documentElement, // Trigger scroll from the root document
+        start: "top top", // When the top of the document hits the top of the viewport
+        end: "bottom top", // When the bottom of the document hits the top of the viewport
+        scrub: true, // Link animation to scroll progress
+        onUpdate: (e) => (direction = e.direction), // Track scroll direction
+      },
+      xPercent: -100, // Move the slider to -100% over the scroll duration
+      ease: "none", // Keep the motion linear for a seamless effect
     });
   }, []);
+
+  const animation = () => {
+    if (xPercent <= -100) {
+      xPercent = 0;
+    }
+    if (xPercent > 0) {
+      xPercent = -100;
+    }
+    gsap.set(firstTextRef.current, { xPercent: xPercent });
+    gsap.set(secondTextRef.current, { xPercent: xPercent });
+    xPercent += 0.1 * direction;
+    requestAnimationFrame(animation);
+  };
 
   return (
     <>
@@ -123,16 +137,17 @@ const About = () => {
             <p className="about-two-description">
               We provide personalized workout plans based on your unique needs.
               In addition to tailored exercise routines, we offer expert
-              nutritional guidance to ensure that you’re fueling your body with
+              nutritional guidance to ensure that you're fueling your body with
               the right foods and vitamins for optimal results.
             </p>
             <button className="about-two-btn">OUR SERVICES</button>
           </div>
         </div>
-        <div className="moving-strip" ref={movementRef}>
-          <span>MOVEMENT CORE &nbsp;</span>
-          <span>MOVEMENT CORE &nbsp;</span>
-          <span>MOVEMENT CORE &nbsp;</span>
+        <div className="slider-container">
+          <div ref={sliderRef} className="slider">
+            <p ref={firstTextRef}>Fitness Redefined Fitness Redefined </p>
+            <p ref={secondTextRef}>Fitness Redefined Fitness Redefined</p>
+          </div>
         </div>
       </section>
       <section className="about-section-three">

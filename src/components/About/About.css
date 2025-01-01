@@ -131,19 +131,30 @@
   background-color: #555;
 }
 
-.moving-strip {
-  display: flex;
-  white-space: nowrap;
-  font-size: 6rem;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-transform: uppercase;
+.slider-container {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  will-change: transform;
-  max-width: max-content;
+  top: calc(100vh - 530px);
+}
+
+.slider {
+  position: relative;
+  white-space: nowrap;
+  display: flex;
+  text-transform: uppercase;
+  cursor: default;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.slider p {
+  margin: 0px;
+  color: white;
+  font-size: 200px;
+  font-weight: 500;
+}
+
+.slider p:nth-of-type(2) {
+  position: absolute;
+  left: 100%;
 }
 
 /* General Section Styles */

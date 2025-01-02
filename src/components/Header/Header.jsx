@@ -70,7 +70,7 @@ const Header = () => {
         <nav className={`navbar ${isMenuOpen ? "mobile-open" : ""}`}>
           <ul>
             <li>
-              <HashLink smooth to="#" onClick={() => setIsMenuOpen(false)}>
+              <HashLink smooth to="/#home" onClick={() => setIsMenuOpen(false)}>
                 Home
               </HashLink>
             </li>
@@ -85,18 +85,17 @@ const Header = () => {
               onMouseEnter={isMobile ? undefined : () => setIsDropdownOpen(true)}
               onMouseLeave={isMobile ? undefined : () => setIsDropdownOpen(false)}
             >
-              <HashLink
-                smooth
-                to="/#daily-events"
+              <a
+                href="daily-events"
                 onClick={isMobile ? toggleDropdown : undefined}
               >
                 Daily Events <IoIosArrowForward className="arrow-icon" />
-              </HashLink>
+              </a>
               <ul className={`dropdown-menu ${isMobile ? "mobile-visible" : ""}`}>
                 <li>
                   <HashLink
                     smooth
-                    to="/#boxing"
+                    to="/boxing"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Boxing
@@ -105,7 +104,7 @@ const Header = () => {
                 <li>
                   <HashLink
                     smooth
-                    to="/#yoga"
+                    to="/yoga"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Yoga
@@ -114,7 +113,7 @@ const Header = () => {
                 <li>
                   <HashLink
                     smooth
-                    to="/#ice-bath"
+                    to="/ice-bath"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Ice Bath

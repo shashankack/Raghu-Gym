@@ -3,6 +3,7 @@ import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Footer.css";
+import { HashLink } from "react-router-hash-link";
 
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
@@ -53,9 +54,16 @@ const Footer = () => {
           <div className="footer-logo">WORKSHOP</div>
           <nav className="footer-row">
             <ul>
-              <a href="#about">About</a>
-              <a href="#daily-events">Daily Events</a>
-              <a href="#workshops">Workshops</a>
+              <HashLink smooth to="/#home">
+                Home
+              </HashLink>
+              <HashLink smooth to="/#about">
+                About
+              </HashLink>
+              <a href="/daily-events">Daily Events</a>
+              <HashLink smooth to="/#services">
+                Workshops
+              </HashLink>
               <a href="#know-us">Know Us</a>
               <a href="#store">Store</a>
               <a href="#contact-us">Contact Us</a>

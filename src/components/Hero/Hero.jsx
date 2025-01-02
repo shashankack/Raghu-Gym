@@ -4,9 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
-import carouselImg1 from "../../assets/carousel-1.webp";
-import carouselImg2 from "../../assets/carousel-2.webp";
-import carouselImg3 from "../../assets/carousel-3.webp";
+import carouselImg1 from "../../assets/carousel-1.png";
+import carouselImg2 from "../../assets/carousel-2.png";
+import carouselImg3 from "../../assets/carousel-3.png";
 
 const Hero = () => {
   return (

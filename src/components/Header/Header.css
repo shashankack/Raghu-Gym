@@ -41,7 +41,7 @@ li {
   background-color: transparent;
   text-transform: uppercase;
   gap: 2rem;
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin: 0 auto;
 }
 
@@ -136,8 +136,14 @@ li {
   }
 
   .header.scrolled {
-    border-radius: 20px 20px 0 0;
+    width: 100%;
+    top: 3.8%;
+    border-radius: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 1s ease;
   }
+
+  
 
   .navbar {
     position: absolute;

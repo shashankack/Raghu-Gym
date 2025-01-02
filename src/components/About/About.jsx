@@ -107,8 +107,8 @@ const About = () => {
   return (
     <>
       <section className="about-section-one" id="about">
-        <div className="about-container">
-          <img src={aboutImg1} className="about-img" alt="Custom Fitness" />
+        <div className="about-one-container">
+          <img src={aboutImg1} className="about-one-img" alt="Custom Fitness" />
           <div className="about-text">
             <p className="about-tagline">EVIDENCE-BASED FITNESS COACHING</p>
             <h1 className="about-title">CUSTOM FITNESS</h1>

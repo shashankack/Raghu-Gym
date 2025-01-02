@@ -77,7 +77,7 @@
 
 .about-section-two {
   background-color: rgba(189, 189, 189, 0.9);
-  padding: 150px 0;
+  padding: 150px 0 0;
   position: relative;
   overflow: hidden;
   height: auto;
@@ -138,12 +138,15 @@
 }
 
 .slider-container {
-  position: absolute;
-  top: calc(100vh - 530px);
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  height: 200px;
+  z-index: 200;
 }
 
 .slider {
-  position: relative;
+  position: absolute;
   white-space: nowrap;
   display: flex;
   text-transform: uppercase;
@@ -255,8 +258,8 @@
 }
 
 @media screen and (max-width: 768px) {
-  .slider-container {
-    top: calc(100vh - 260px);
+  .about-section-two {
+    padding: 20px;
   }
 
   .slider p {
@@ -275,7 +278,7 @@
   }
 
   .about-section-two {
-    padding: 100px 0;
+    padding: 100px 0 0;
   }
 
   .about-two-title {
@@ -295,12 +298,8 @@
     flex-direction: column;
   }
 
-  .slider-container {
-    top: calc(100vh - 300px);
-  }
-
   .slider p {
-    font-size: 100px;
+    font-size: 150px;
   }
 
   .grid-container {

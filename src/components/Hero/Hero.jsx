@@ -34,9 +34,12 @@ const Hero = () => {
         </SwiperSlide>
       </Swiper>
       <div className="hero-content">
-        <h1 className="hero-title">Fitness + Health</h1>
-        <h1 className="hero-title">Coaching For Busy</h1>
-        <h1 className="hero-title">Professionals</h1>
+        {/* <h1 className="hero-title">Martial Arts.</h1>
+        <h1 className="hero-title">From Raghu.</h1>
+        <h1 className="hero-title">With Love.</h1> */}
+        <h1 className="hero-title">Reach New Heights: Expert </h1>
+        <h1 className="hero-title">Boxing, Fitness, and Yoga for </h1>
+        <h1 className="hero-title">Ambitious Professionals</h1>
         <button className="hero-btn">Get Started</button>
       </div>
     </section>

@@ -17,7 +17,7 @@ import card4Gradient from "../../assets/MMA-gradient.webp";
 import card5Gradient from "../../assets/MUAY_THAI-gradient.webp";
 import card6Gradient from "../../assets/RECOVERY-gradient.webp";
 
-import aboutImg1 from "../../assets/about-img-one.jpg";
+import aboutImg1 from "../../assets/gloves.jpg";
 
 const About = () => {
   const [hoveredImage, setHoveredImage] = useState(null);
@@ -109,18 +109,18 @@ const About = () => {
       <section className="about-section-one" id="about">
         <div className="about-one-container">
           <img src={aboutImg1} className="about-one-img" alt="Custom Fitness" />
-          <div className="about-text">
-            <p className="about-tagline">EVIDENCE-BASED FITNESS COACHING</p>
-            <h1 className="about-title">CUSTOM FITNESS</h1>
-            <h1 className="about-title"> & NUTRITION PLANS</h1>
-            <p className="about-description">
+          <div className="about-one-text">
+            <p className="about-one-tagline">EVIDENCE-BASED FITNESS COACHING</p>
+            <h1 className="about-one-title">CUSTOM FITNESS</h1>
+            <h1 className="about-one-title"> & NUTRITION PLANS</h1>
+            <p className="about-one-description">
               Our health and fitness training services cater to individuals of
               all fitness levels and goals. Whether you are looking to lose
               weight, build muscle, improve stamina, or simply maintain a
               healthy lifestyle, our experienced trainers are dedicated to
               guiding you.
             </p>
-            <button className="about-btn">LEARN MORE</button>
+            <button className="about-one-btn">LEARN MORE</button>
           </div>
         </div>
       </section>
@@ -156,7 +156,7 @@ const About = () => {
               onMouseEnter={() => setHoveredImage(card.id)}
               onMouseLeave={() => setHoveredImage(null)}
             >
-              <h2 className="card-title" >{card.title}</h2>
+              <h2 className="card-title">{card.title}</h2>
               <img
                 src={hoveredImage === card.id ? card.gradient : card.img}
                 alt={card.title}

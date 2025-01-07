@@ -8,6 +8,8 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollPosition, setLastScrollPosition] = useState(0);
 
   // Detect screen size
   useEffect(() => {
@@ -22,26 +24,37 @@ const Header = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Add scroll event listener
+  // Add scroll event listener for hiding/showing the header
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollPosition = window.scrollY;
+
+      if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 50) {
+        // Scrolling down
+        setShowHeader(false);
+      } else {
+        // Scrolling up
+        setShowHeader(true);
+      }
+
+      setLastScrollPosition(currentScrollPosition);
+      setIsScrolled(currentScrollPosition > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
 
     // Cleanup event listener on unmount
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollPosition]);
 
   // Toggle menu state
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Toggle dropdown state
+  // Toggle dropdown state for mobile
   const toggleDropdown = (e) => {
-    e.preventDefault(); // Prevent default link behavior
+    e.preventDefault();
     if (isMobile) {
       setIsDropdownOpen(!isDropdownOpen);
     }
@@ -53,10 +66,14 @@ const Header = () => {
         className={`overlay ${isMenuOpen ? "visible" : ""}`}
         onClick={toggleMenu}
       ></div>
-      <header className={`header ${isScrolled ? "scrolled" : ""}`}>
+      <header
+        className={`header ${isScrolled ? "scrolled" : ""} ${
+          showHeader ? "visible" : "hidden"
+        }`}
+      >
         <div className="header-logo">
           <HashLink smooth to="#" onClick={() => setIsMenuOpen(false)}>
-            WORKSHOP
+            The Works
           </HashLink>
         </div>
         <div
@@ -81,17 +98,37 @@ const Header = () => {
             </li>
             <li
               className={`dropdown ${isDropdownOpen ? "open" : ""}`}
-              onClick={isMobile ? toggleDropdown : undefined}
-              onMouseEnter={isMobile ? undefined : () => setIsDropdownOpen(true)}
-              onMouseLeave={isMobile ? undefined : () => setIsDropdownOpen(false)}
+              onMouseEnter={
+                isMobile ? undefined : () => setIsDropdownOpen(true)
+              }
+              onMouseLeave={
+                isMobile ? undefined : () => setIsDropdownOpen(false)
+              }
             >
-              <a
-                href="daily-events"
-                onClick={isMobile ? toggleDropdown : undefined}
+              <div className="dropdown-split">
+                <HashLink
+                  smooth
+                  to="/daily-events"
+                  className="dropdown-link"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Daily Classes
+                </HashLink>
+                <button
+                  className="dropdown-toggle"
+                  onClick={toggleDropdown}
+                  aria-expanded={isDropdownOpen ? "true" : "false"}
+                >
+                  <IoIosArrowForward
+                    className={`arrow-icon ${isDropdownOpen ? "rotated" : ""}`}
+                  />
+                </button>
+              </div>
+              <ul
+                className={`dropdown-menu ${
+                  isDropdownOpen || !isMobile ? "visible" : ""
+                }`}
               >
-                Daily Events <IoIosArrowForward className="arrow-icon" />
-              </a>
-              <ul className={`dropdown-menu ${isMobile ? "mobile-visible" : ""}`}>
                 <li>
                   <HashLink
                     smooth
@@ -136,7 +173,7 @@ const Header = () => {
                 to="/#services"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Know Us
+                Trainers
               </HashLink>
             </li>
             <li>

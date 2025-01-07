@@ -18,3 +18,12 @@
   font-family: "Bebas Nueue";
   src: url("./assets/fonts/BebasNeue-Regular.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Kenyan Coffee";
+  src: url("./assets/fonts/Kenyan-Coffee-Rg.otf") format("opentype");
+}
+
+:root {
+  --red: #cf0808;
+}

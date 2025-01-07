@@ -16,38 +16,43 @@
 .hero-content {
     position: absolute; /* Layer it on top of the carousel */
     width: 100%;
-    top: 70%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for perfect centering */
-    z-index: 5; /* Ensure it appears above the carousel */
-    color: white; /* Set text color for contrast */
-    text-align: center; /* Center the text */
+    top: 70%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    z-index: 5; 
+    color: white; 
+    text-align: center;
 }
 
 .hero-title {
-    font-size: 4em;
+    font-size: 100px;
     font-weight: 800;
-    font-family: "Kenawe", sans-serif;
+    font-family: "Kenyan Coffee", sans-serif;
     text-transform: uppercase;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Add a subtle text shadow for readability */
 }
 
 .hero-btn {
+    /* position: absolute; */
+    z-index: 10;
+    top: 80%;
+    left: 5%;
     margin-top: 1rem;
     padding: 1rem 2rem;
     font-size: 1.2rem;
     font-weight: bold;
-    border: 1px solid white;
-    color: #fff;
-    background-color: transparent;
+    background-color: var(--red);
+    color: white;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
+    border: none;
 }
 
 .hero-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05); 
+    color: #fff;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
 
 @media screen and (max-width: 768px) {

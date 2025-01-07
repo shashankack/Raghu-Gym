@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./About.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -17,6 +18,9 @@ import card4Gradient from "../../assets/MMA-gradient.webp";
 import card5Gradient from "../../assets/MUAY_THAI-gradient.webp";
 import card6Gradient from "../../assets/RECOVERY-gradient.webp";
 
+import iceBath from '../../assets/ice-bath.jpg';
+import boxing from '../../assets/boxing.jpg';
+
 import aboutImg1 from "../../assets/gloves.jpg";
 
 const About = () => {
@@ -24,8 +28,38 @@ const About = () => {
   const firstTextRef = useRef(null);
   const secondTextRef = useRef(null);
   const sliderRef = useRef(null);
-  let xPercent = 0;
+  let xPercent = -50;
   let direction = -1;
+  const imageRefs = useRef([]);
+  const navigate = useNavigate();
+
+  const eventsData = [
+    {
+      id: 1,
+      title: "Boxing",
+      img: boxing,
+      description:
+        "Get in shape and learn the fundamentals with our experienced coaches.",
+      redirect: "/boxing",
+    },
+    {
+      id: 2,
+      title: "Yoga",
+      img: "https://placehold.co/500x400",
+      description:
+        "Improve your flexibility and mental health with our yoga classes.",
+      redirect: "/yoga",
+    },
+    {
+      id: 3,
+      title: "Ice Bath",
+      img: iceBath,
+      description:
+        "Recover faster and reduce inflammation with our ice bath therapy.",
+      redirect: "/ice-bath",
+    },
+  ];
+
   const cardData = [
     {
       id: 1,
@@ -77,6 +111,10 @@ const About = () => {
     },
   ];
 
+  const handleRedirect = (redirectPath) => {
+    navigate(redirectPath);
+  };
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -108,7 +146,9 @@ const About = () => {
     <>
       <section className="about-section-one" id="about">
         <div className="about-one-container">
-          <img src={aboutImg1} className="about-one-img" alt="Custom Fitness" />
+          <div className="about-one-img">
+            <img src={aboutImg1} alt="Custom Fitness" />
+          </div>
           <div className="about-one-text">
             <p className="about-one-tagline">EVIDENCE-BASED FITNESS COACHING</p>
             <h1 className="about-one-title">CUSTOM FITNESS</h1>
@@ -147,7 +187,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="about-section-three">
+      {/* <section className="about-section-three" id="daily-classes">
         <div className="grid-container">
           {cardData.map((card) => (
             <div
@@ -164,6 +204,31 @@ const About = () => {
               <div className="card-content">
                 <p className="card-description">{card.description}</p>
                 <button className="card-button">Learn More</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section> */}
+      <section className="about-section-three" id="daily-classes">
+        <div className="services-container">
+          {eventsData.map((event, index) => (
+            <div className="card" key={event.id}>
+              <div
+                className="card-image"
+                ref={(el) => (imageRefs.current[index] = el)}
+                onClick={() => handleRedirect(event.redirect)} // Redirect on image click
+              >
+                <img src={event.img} alt={event.title} />
+              </div>
+              <div className="card-content">
+                <h3>{event.title}</h3>
+                <p>{event.description}</p>
+                <button
+                  className="redirect-button"
+                  onClick={() => handleRedirect(event.redirect)} // Redirect on button click
+                >
+                  Learn More
+                </button>
               </div>
             </div>
           ))}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Header.css";
 import { HashLink } from "react-router-hash-link";
 import { IoIosArrowForward } from "react-icons/io";
+import logo from "../../assets/raghulogo.png"
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -72,7 +73,7 @@ const Header = () => {
         }`}
       >
         <div className="header-logo">
-          <HashLink smooth to="#" onClick={() => setIsMenuOpen(false)}>
+          <HashLink smooth to="/#" onClick={() => setIsMenuOpen(false)}>
             The Works
           </HashLink>
         </div>
@@ -87,12 +88,12 @@ const Header = () => {
         <nav className={`navbar ${isMenuOpen ? "mobile-open" : ""}`}>
           <ul>
             <li>
-              <HashLink smooth to="/#home" onClick={() => setIsMenuOpen(false)}>
+              <HashLink smooth to="/#" onClick={() => setIsMenuOpen(false)}>
                 Home
               </HashLink>
             </li>
             <li>
-              <HashLink smooth to="/#about" onClick={() => setIsMenuOpen(false)}>
+              <HashLink smooth to="#about" onClick={() => setIsMenuOpen(false)}>
                 About
               </HashLink>
             </li>
@@ -108,7 +109,7 @@ const Header = () => {
               <div className="dropdown-split">
                 <HashLink
                   smooth
-                  to="/daily-events"
+                  to="#daily-classes"
                   className="dropdown-link"
                   onClick={() => setIsMenuOpen(false)}
                 >

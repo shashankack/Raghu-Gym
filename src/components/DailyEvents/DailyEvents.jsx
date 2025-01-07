@@ -13,7 +13,6 @@ const eventsData = [
     id: 1,
     title: "Boxing",
     img: boxing,
-    imgBw: boxingBw,
     description:
       "Get in shape and learn the fundamentals of boxing with our experienced coaches.",
     redirect: "/boxing",
@@ -22,7 +21,6 @@ const eventsData = [
     id: 2,
     title: "Yoga",
     img: "https://placehold.co/500x400",
-    imgBw: "https://placehold.co/500x400",
     description:
       "Improve your flexibility and mental health with our yoga classes.",
     redirect: "/yoga",
@@ -31,7 +29,6 @@ const eventsData = [
     id: 3,
     title: "Ice Bath",
     img: iceBath,
-    imgBw: iceBathBw,
     description:
       "Recover faster and reduce inflammation with our ice bath therapy.",
     redirect: "/ice-bath",

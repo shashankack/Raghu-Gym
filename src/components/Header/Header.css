@@ -27,18 +27,18 @@ li {
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .header.hidden {
   transform: translateY(-100%);
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   opacity: 0;
 }
 
 .header.visible {
   transform: translateY(0);
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   opacity: 1;
 }
 
@@ -125,6 +125,7 @@ li {
 
 .navbar .arrow-icon {
   transition: transform 0.3s ease;
+  color: white;
 }
 
 .navbar .dropdown.open .arrow-icon {
@@ -133,17 +134,17 @@ li {
 
 .navbar .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 110%;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   display: none;
   flex-direction: column;
-  list-style: none;
-  padding: 0;
   margin: 0;
   z-index: 10;
+  gap: 10px;
 }
 
 .navbar .dropdown.open .dropdown-menu {
@@ -151,27 +152,11 @@ li {
 }
 
 .navbar .dropdown-menu li {
-  padding: 10px;
-}
-
-.navbar .dropdown-menu li a {
-  color: white;
+  padding: 0 0px;
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-  .header {
-    top: 30px;
-    padding: 2% 0;
-  }
-
-  .header.scrolled {
-    width: 100%;
-    top: 3.8%;
-    border-radius: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  }
-
   .navbar {
     position: absolute;
     top: 100%;
@@ -185,11 +170,12 @@ li {
     gap: 1.5rem;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: all 0.5s ease;
   }
 
   .navbar.mobile-open {
     max-height: 100vh;
+    transition: all 0.5s ease;
     padding: 1rem;
   }
 
@@ -202,10 +188,33 @@ li {
     font-size: 1.5rem;
   }
 
+  .navbar .arrow-icon {
+    font-size: 30px;
+  }
+
+  .navbar .dropdown-menu {
+    display: none;
+    left: 80%;
+    padding: 10px;
+  }
+
+  .navbar .dropdown-menu a {
+    font-size: 20px;
+    text-wrap: nowrap;
+  }
+
+  .navbar .dropdown-menu li {
+    margin: 10px 0;
+  }
+
+  .navbar .dropdown.open .dropdown-menu {
+    display: inline-block;
+  }
+
   .hamburger {
     position: absolute;
     top: 50%;
-    left: 10px;
+    right: 50px;
     transform: translateY(-50%);
     z-index: 100;
     cursor: pointer;

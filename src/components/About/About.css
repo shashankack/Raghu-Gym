@@ -17,8 +17,11 @@
 
 .about-one-img {
   width: 100%;
-  height: 100vh;
   object-fit: contain;
+}
+
+.about-one-img img {
+  width: 100%;
 }
 
 .about-one-text {
@@ -172,20 +175,20 @@
 /* General Section Styles */
 .about-section-three {
   padding: 50px 20px;
-  background-color: #f9f9f9;
+  background-color: #000;
 }
 
-.grid-container {
+/* .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr)); /* Responsive grid */
-  gap: 20px; /* Space between grid items */
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 20px;
   padding: 0 15%;
 }
 
 .grid-item {
   position: relative;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   text-align: center;
   overflow: hidden;
   cursor: pointer;
@@ -201,11 +204,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease-in-out; /* Smooth hover animation for image */
+  transition: transform 0.5s ease-in-out;
 }
 
 .grid-item:hover img {
-  transform: scale(1.01); /* Zoom-in effect on hover */
+  transform: scale(1.01);
 }
 
 .grid-item h2 {
@@ -258,9 +261,31 @@
 
 .card-button:hover {
   background-color: #333;
-}
+} */
 
 @media screen and (max-width: 768px) {
+  .about-section-one {
+    height: auto;
+  }
+  .about-one-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .about-one-img img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .about-one-text {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    padding: 0 15px;
+  }
+
   .about-section-two {
     padding: 20px;
   }
@@ -278,6 +303,34 @@
   .about-section-one {
     padding: 20px 0;
     height: auto;
+  }
+
+  .about-one-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .about-one-img img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .about-one-text {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    padding: 0 15px;
+  }
+
+  .about-one-title {
+    font-size: 2.5em;
+  }
+
+  .about-one-description {
+    font-size: 1em;
   }
 
   .about-section-two {
@@ -299,15 +352,119 @@
 
   .about-one-container img {
     width: 100%;
-    height: 400px;
+    height: 100%;
   }
-  
+
+  .slider-container {
+    height: 70px;
+  }
 
   .slider p {
-    font-size: 150px;
+    font-size: 50px;
   }
 
   .grid-container {
     grid-template-columns: 1fr;
+  }
+}
+
+
+.daily-events-title {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Container */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Card */
+.card {
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1px 20px var(--red);
+}
+
+/* Image */
+.card-image {
+  overflow: hidden;
+  height: 450px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1); /* Initial zoom for parallax */
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05); /* Slight zoom on hover */
+  cursor: pointer;
+}
+
+/* Content */
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.card-content p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.redirect-button {
+  background-color: var(--red);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+
+}
+
+.redirect-button:hover {
+  background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .daily-events-section {
+    height: auto;
+  }
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
   }
 }

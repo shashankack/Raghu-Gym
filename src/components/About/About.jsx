@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./About.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-
+/* 
 import card1 from "../../assets/BJJ.webp";
 import card2 from "../../assets/BOXING.webp";
 import card3 from "../../assets/FITNESS.webp";
@@ -16,15 +16,15 @@ import card2Gradient from "../../assets/BOXING-gradient.webp";
 import card3Gradient from "../../assets/FITNESS-gradient.webp";
 import card4Gradient from "../../assets/MMA-gradient.webp";
 import card5Gradient from "../../assets/MUAY_THAI-gradient.webp";
-import card6Gradient from "../../assets/RECOVERY-gradient.webp";
+import card6Gradient from "../../assets/RECOVERY-gradient.webp"; */
 
-import iceBath from '../../assets/ice-bath.jpg';
-import boxing from '../../assets/boxing.jpg';
+import iceBath from "../../assets/ice-bath.jpg";
+import boxing from "../../assets/boxing.jpg";
 
 import aboutImg1 from "../../assets/gloves.jpg";
 
 const About = () => {
-  const [hoveredImage, setHoveredImage] = useState(null);
+  // const [hoveredImage, setHoveredImage] = useState(null);
   const firstTextRef = useRef(null);
   const secondTextRef = useRef(null);
   const sliderRef = useRef(null);
@@ -60,7 +60,7 @@ const About = () => {
     },
   ];
 
-  const cardData = [
+  /* const cardData = [
     {
       id: 1,
       title: "BJJ",
@@ -109,7 +109,7 @@ const About = () => {
       description:
         "Recover from injuries and improve your mobility with our specialized recovery programs.",
     },
-  ];
+  ]; */
 
   const handleRedirect = (redirectPath) => {
     navigate(redirectPath);
@@ -223,12 +223,12 @@ const About = () => {
               <div className="card-content">
                 <h3>{event.title}</h3>
                 <p>{event.description}</p>
-                <button
-                  className="redirect-button"
-                  onClick={() => handleRedirect(event.redirect)} // Redirect on button click
+                <a
+                  className="redirect-link"
+                  href={event.redirect} // Redirect on button click
                 >
                   Learn More
-                </button>
+                </a>
               </div>
             </div>
           ))}

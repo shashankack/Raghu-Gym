@@ -435,20 +435,35 @@
   line-height: 1.5;
 }
 
-.redirect-button {
-  background-color: var(--red);
-  color: white;
-  padding: 10px 20px;
+.redirect-link {
+  background-color: transparent;
+  position: relative;
+  color: var(--red);
   border: none;
-  border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
 
 }
 
-.redirect-button:hover {
-  background-color: #333;
+.redirect-link:hover {
+  color: var(--red);
+}
+
+.redirect-link::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 0%;
+  height: 1px;
+  background-color: var(--red);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.redirect-link:hover::after {
+  width: 100%;
 }
 
 @media (max-width: 768px) {

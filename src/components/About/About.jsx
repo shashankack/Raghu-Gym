@@ -227,7 +227,7 @@ const About = () => {
                   className="redirect-link"
                   href={event.redirect} // Redirect on button click
                 >
-                  Learn More
+                  Learn More...
                 </a>
               </div>
             </div>

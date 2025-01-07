@@ -51,7 +51,7 @@ const Footer = () => {
       <section className="conclusion" ref={triggerRef}></section>
       <footer className="footer">
         <section className="footer-container" ref={footerRef}>
-          <div className="footer-logo">WORKSHOP</div>
+          <div className="footer-logo">THE SHOP</div>
           <nav className="footer-row">
             <ul>
               <HashLink smooth to="/#home">
@@ -60,11 +60,12 @@ const Footer = () => {
               <HashLink smooth to="/#about">
                 About
               </HashLink>
-              <a href="/daily-events">Daily Events</a>
+              <HashLink smooth to="#daily-classes">Daily Classes</HashLink>
               <HashLink smooth to="/#services">
                 Workshops
               </HashLink>
               <a href="#know-us">Know Us</a>
+              <a href="#store">Trainers</a>
               <a href="#store">Store</a>
               <a href="#contact-us">Contact Us</a>
             </ul>

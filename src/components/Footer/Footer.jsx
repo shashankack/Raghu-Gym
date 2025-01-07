@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Footer.css";
@@ -16,17 +15,6 @@ const Footer = () => {
   const triggerRef = useRef(null);
 
   useEffect(() => {
-    const lenis = new Lenis({
-      smooth: true,
-      lerp: 0.1,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
     gsap.set(footerRef.current, { yPercent: -50 });
 
     gsap.to(footerRef.current, {
@@ -41,7 +29,6 @@ const Footer = () => {
     });
 
     return () => {
-      lenis.destroy();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);

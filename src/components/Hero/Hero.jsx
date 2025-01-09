@@ -4,16 +4,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
-import carouselImg1 from "../../assets/carousel-1.png";
-import carouselImg2 from "../../assets/carousel-2.png";
-import carouselImg3 from "../../assets/carousel-3.png";
+import carouselImg1 from "../../assets/carousel-1.jpg";
+import carouselImg2 from "../../assets/carousel-2.jpg";
+import carouselImg3 from "../../assets/carousel-3.jpg";
 
 const Hero = () => {
   return (
     <section className="hero-section" id="home">
       <Swiper
         modules={[Autoplay]}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 2200 }}
         spaceBetween={0}
         slidesPerView={1}
         fadeEffect={{ crossFade: true }}

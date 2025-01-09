@@ -1,10 +1,3 @@
-/* General Styles */
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 a {
   text-decoration: none;
   color: white;
@@ -17,17 +10,17 @@ li {
 /* Header Styles */
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 0 10%;
-  gap: 20%;
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
+  padding: 0 20px;
   z-index: 100;
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
   transition: all 0.5s ease;
+  
 }
 
 .header.hidden {
@@ -52,14 +45,10 @@ li {
 
 /* Navbar Styles */
 .navbar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
   background-color: transparent;
   text-transform: uppercase;
   gap: 2rem;
   font-size: 0.8rem;
-  margin: 0 auto;
 }
 
 .navbar ul {
@@ -168,15 +157,17 @@ li {
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    max-height: 0;
+    display: none;
     overflow: hidden;
     transition: all 0.5s ease;
+    padding: 1rem;
   }
 
   .navbar.mobile-open {
+    display: inline-block;
     max-height: 100vh;
     transition: all 0.5s ease;
-    padding: 1rem;
+    
   }
 
   .navbar ul {
@@ -189,12 +180,12 @@ li {
   }
 
   .navbar .arrow-icon {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .navbar .dropdown-menu {
     display: none;
-    left: 80%;
+    left: 50%;
     padding: 10px;
   }
 
@@ -214,7 +205,7 @@ li {
   .hamburger {
     position: absolute;
     top: 50%;
-    right: 50px;
+    right: 10px;
     transform: translateY(-50%);
     z-index: 100;
     cursor: pointer;

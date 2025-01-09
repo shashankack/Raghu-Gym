@@ -27,7 +27,9 @@
 .hero-title {
     font-size: 100px;
     font-weight: 800;
-    font-family: "Kenyan Coffee", sans-serif;
+    font-family: Bebas Nueue;
+    letter-spacing: 4px;
+    line-height: 95px;
     text-transform: uppercase;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Add a subtle text shadow for readability */
 }
@@ -64,6 +66,13 @@
 @media screen and (max-width: 480px) {
     .hero-title {
         font-size: 2rem;
+        letter-spacing: 2px;
+        line-height: normal;
+    }
+
+    .hero-btn {
+        font-size: 1.2rem;
+        padding: .5rem 1rem;
     }
   
 }

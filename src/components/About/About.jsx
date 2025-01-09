@@ -20,8 +20,11 @@ import card6Gradient from "../../assets/RECOVERY-gradient.webp"; */
 
 import iceBath from "../../assets/ice-bath.jpg";
 import boxing from "../../assets/boxing.jpg";
+import yoga from "../../assets/yoga.jpg";
 
-import aboutImg1 from "../../assets/gloves.jpg";
+import aboutImg1 from "../../assets/about-img.png";
+
+import auraVid from "../../assets/aura_overlay.mp4";
 
 const About = () => {
   // const [hoveredImage, setHoveredImage] = useState(null);
@@ -39,15 +42,15 @@ const About = () => {
       title: "Boxing",
       img: boxing,
       description:
-        "Get in shape and learn the fundamentals with our experienced coaches.",
+        "Enhance your boxing technique and build endurance with guidance from our skilled coaches.",
       redirect: "/boxing",
     },
     {
       id: 2,
       title: "Yoga",
-      img: "https://placehold.co/500x400",
+      img: yoga,
       description:
-        "Improve your flexibility and mental health with our yoga classes.",
+        "Expand your flexibility and mental peace through personalized yoga classes led by expert instructors.",
       redirect: "/yoga",
     },
     {
@@ -55,7 +58,7 @@ const About = () => {
       title: "Ice Bath",
       img: iceBath,
       description:
-        "Recover faster and reduce inflammation with our ice bath therapy.",
+        "Recover faster and ease muscle pain with our soothing ice bath therapy, perfect for post-workout rejuvenation.",
       redirect: "/ice-bath",
     },
   ];
@@ -145,39 +148,54 @@ const About = () => {
   return (
     <>
       <section className="about-section-one" id="about">
-        <div className="about-one-container">
-          <div className="about-one-img">
-            <img src={aboutImg1} alt="Custom Fitness" />
-          </div>
-          <div className="about-one-text">
-            <p className="about-one-tagline">EVIDENCE-BASED FITNESS COACHING</p>
-            <h1 className="about-one-title">CUSTOM FITNESS</h1>
-            <h1 className="about-one-title"> & NUTRITION PLANS</h1>
-            <p className="about-one-description">
-              Our health and fitness training services cater to individuals of
-              all fitness levels and goals. Whether you are looking to lose
-              weight, build muscle, improve stamina, or simply maintain a
-              healthy lifestyle, our experienced trainers are dedicated to
-              guiding you.
-            </p>
-            <button className="about-one-btn">LEARN MORE</button>
-          </div>
+        <div className="about-one-img">
+          <img src={aboutImg1} alt="Custom Fitness" />
+        </div>
+        <div className="about-one-text">
+          <p className="about-one-tagline">TRANSFORM, TRANSCEND, TRIUMPH</p>
+          <h1 className="about-one-title">Holistic Training: Boxing, Yoga,</h1>
+          <h1 className="about-one-title">
+            and Wellness Therapies at Workshop
+          </h1>
+          <p className="about-one-description">
+            Step into Workshop, where we redefine fitness with a holistic
+            training approach. Engage in high-energy boxing classes that build
+            strength and endurance, balanced by the tranquility of yoga that
+            nourishes your mind and spirit. Our wellness therapies, including
+            rejuvenating ice baths and tailored nutrition plans, are designed to
+            enhance recovery and promote overall well-being. Experience the
+            perfect blend of intensity and relaxation, all designed to elevate
+            your health journey.
+          </p>
+          <button className="about-one-btn">LEARN MORE</button>
         </div>
       </section>
 
       <section className="about-section-two" id="services">
+        <div className="video-background">
+          <video
+            src={auraVid}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="background-video"
+          />
+        </div>
         <div className="about-two-container">
           <div className="about-two-text">
             <p className="about-two-tagline">PERSONALIZED WORKOUT PLANS</p>
-            <h1 className="about-two-title">INNOVATIVE TRAINING</h1>
-            <h1 className="about-two-title">METHODS FOR WOMEN</h1>
+            <h1 className="about-two-title">
+              Customized Training for Every Goal: Yoga, and Beyond
+            </h1>
             <p className="about-two-description">
-              We provide personalized workout plans based on your unique needs.
-              In addition to tailored exercise routines, we offer expert
-              nutritional guidance to ensure that you're fueling your body with
-              the right foods and vitamins for optimal results.
+              At Workshop, we believe in fitness designed around you. Enjoy
+              bespoke programs that elevate your health with every session,
+              whether you're interested in boxing, yoga, or building overall
+              strength and wellness. Our expert trainers tailor each workout to
+              fit your unique needs, ensuring a personal path to success.
             </p>
-            <button className="about-two-btn">OUR SERVICES</button>
+            <button className="about-two-btn">OUR WORKSHOP</button>
           </div>
         </div>
         <div className="slider-container">
@@ -187,6 +205,7 @@ const About = () => {
           </div>
         </div>
       </section>
+
       {/* <section className="about-section-three" id="daily-classes">
         <div className="grid-container">
           {cardData.map((card) => (

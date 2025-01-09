@@ -25,6 +25,7 @@ const Footer = () => {
         start: "bottom bottom",
         end: "+=75%",
         scrub: true,
+        onEnter: () => ScrollTrigger.refresh(),
       },
     });
 
@@ -38,7 +39,7 @@ const Footer = () => {
       <section className="conclusion" ref={triggerRef}></section>
       <footer className="footer">
         <section className="footer-container" ref={footerRef}>
-          <div className="footer-logo">THE SHOP</div>
+          <div className="footer-logo">THE WORKS</div>
           <nav className="footer-row">
             <ul>
               <HashLink smooth to="/#home">
@@ -47,7 +48,9 @@ const Footer = () => {
               <HashLink smooth to="/#about">
                 About
               </HashLink>
-              <HashLink smooth to="#daily-classes">Daily Classes</HashLink>
+              <HashLink smooth to="#daily-classes">
+                Daily Classes
+              </HashLink>
               <HashLink smooth to="/#services">
                 Workshops
               </HashLink>

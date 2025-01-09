@@ -76,7 +76,7 @@ const Header = () => {
           <HashLink smooth to="/#" onClick={() => setIsMenuOpen(false)}>
             The Works
           </HashLink>
-        </div>
+          </div>
         <div
           className={`hamburger ${isMenuOpen ? "open" : ""}`}
           onClick={toggleMenu}

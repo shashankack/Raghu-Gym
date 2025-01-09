@@ -361,15 +361,15 @@
 
 @media screen and (max-width: 480px) {
   .about-section-one {
-    padding: 20px 0 50px;
+    padding: 50px 0 50px;
     height: auto;
-    gap: 10px;
-    height: 100vh;
+    gap: 60px;
+    height: auto;
     flex-direction: column;
   }
 
   .about-one-img {
-    width: 70%;
+    width: 90%;
   }
 
   .about-one-img img {
@@ -380,12 +380,14 @@
   .about-one-title {
     font-size: 1.5em;
     font-weight: 600;
+    line-height: 30px;
   }
 
   .about-one-text {
     color: #fff;
     width: 100%;
     padding: 0 25px;
+    gap: 10px;
   }
 
   .about-one-tagline {

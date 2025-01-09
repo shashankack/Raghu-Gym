@@ -153,9 +153,8 @@ const About = () => {
         </div>
         <div className="about-one-text">
           <p className="about-one-tagline">TRANSFORM, TRANSCEND, TRIUMPH</p>
-          <h1 className="about-one-title">Holistic Training: Boxing, Yoga,</h1>
           <h1 className="about-one-title">
-            and Wellness Therapies at Workshop
+            Holistic Training: Boxing, Yoga,and Wellness Therapies at Workshop
           </h1>
           <p className="about-one-description">
             Step into Workshop, where we redefine fitness with a holistic

@@ -10,7 +10,7 @@ const Icebath = () => {
         height: "100vh",
       }}
     >
-      Icebath
+      Coming Soon...{" "}
     </div>
   );
 };

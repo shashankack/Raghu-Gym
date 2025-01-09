@@ -10,7 +10,7 @@ const Yoga = () => {
         height: "100vh",
       }}
     >
-      Yoga
+      Coming Soon...
     </div>
   );
 };

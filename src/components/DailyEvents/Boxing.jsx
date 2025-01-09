@@ -10,7 +10,7 @@ const Boxing = () => {
         height: "100vh",
       }}
     >
-      Boxing
+      Coming Soon...
     </div>
   );
 };

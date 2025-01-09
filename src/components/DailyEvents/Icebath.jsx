@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
 
 const Icebath = () => {
   return (
-    <div>Icebath</div>
-  )
-}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      Icebath
+    </div>
+  );
+};
 
-export default Icebath
+export default Icebath;

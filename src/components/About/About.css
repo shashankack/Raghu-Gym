@@ -364,7 +364,7 @@
     padding: 20px 0 50px;
     height: auto;
     gap: 10px;
-    height: auto;
+    height: 100vh;
     flex-direction: column;
   }
 

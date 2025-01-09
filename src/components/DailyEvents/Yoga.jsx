@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
 
 const Yoga = () => {
   return (
-    <div>Yoga</div>
-  )
-}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      Yoga
+    </div>
+  );
+};
 
-export default Yoga
+export default Yoga;

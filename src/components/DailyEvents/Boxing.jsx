@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
 
 const Boxing = () => {
   return (
-    <div>Boxing</div>
-  )
-}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      Boxing
+    </div>
+  );
+};
 
-export default Boxing
+export default Boxing;

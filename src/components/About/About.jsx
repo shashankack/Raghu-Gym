@@ -116,6 +116,7 @@ const About = () => {
 
   const handleRedirect = (redirectPath) => {
     navigate(redirectPath);
+    scrollTo(0, 0);
   };
 
   useEffect(() => {

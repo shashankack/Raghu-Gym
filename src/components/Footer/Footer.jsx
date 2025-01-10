@@ -26,6 +26,7 @@ const Footer = () => {
         end: "+=75%",
         scrub: true,
         onEnter: () => ScrollTrigger.refresh(),
+        onEnterBack: () => ScrollTrigger.refresh(),
       },
     });
 
